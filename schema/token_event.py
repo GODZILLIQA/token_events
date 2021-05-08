@@ -27,8 +27,8 @@ class TokenEvent(BaseModel):
         allow_mutation = False
         frozen = True
 
-    event_id: int
-    parent_event_id: Optional[int]
+    event_id: UUID
+    parent_event_id: Optional[UUID]
     start_date: Optional[datetime]
     end_date: Optional[datetime]
     created_at: Optional[datetime]

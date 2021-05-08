@@ -6,9 +6,17 @@ name = "pypi"
 [packages]
 pydantic = ">=1.8.1"
 orjson = ">=3.5.2"
+fastapi = ">=0.64.0"
+uvicorn = {extras = ["standard"], versions = ">=0.13.4"}
+gunicorn = ">=20.1.0"
+redis = ">=3.5.3"
+loguru = ">=0.5.3"
+debugpy = ">=v1.0.0rc2"
+pytest = ">=6.2.3"
 
 [dev-packages]
 black = ">=21.5b0"
+flake8 = ">=3.9.0"
 
 [requires]
 python_version = "3.9"

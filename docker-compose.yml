@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  api-redis:
+    image: "redis:alpine"
+  api:
+    environment:
+      - DATABASE_URL=postgresql://local:local@api-db:5432/test_db
+    build:
+      context: '.'
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app/token_events
+    ports:
+      - "8080:8080"
+      - "5678:5678"
+    depends_on:
+      - api-redis
+    restart: always
