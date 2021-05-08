@@ -13,13 +13,12 @@ RUN pipenv install --deploy --ignore-pipfile
 ENV PATH=/root/.local/share/virtualenvs/token_events-5KtQ2ZhJ/bin:$PATH
 
 # Copy utility files
-#COPY .env .
-#COPY alembic.ini .
+COPY .env .
 
 # Copy over bash file
-#COPY startup.sh .
-#RUN chmod +x ./startup.sh
+COPY startup.sh .
+RUN chmod +x ./startup.sh
 
 # Copy the rest of the files over
 COPY . .
-#CMD ["bash", "/app/atletico/startup.sh"]
+CMD ["bash", "/app/token_events/startup.sh"]

@@ -37,6 +37,6 @@ def start_app() -> FastAPI:
 
     @app.get("/")
     async def index() -> ORJSONResponse:
-        return ORJSONResponse({"test": "ok"})
+        return ORJSONResponse({"test": True})
 
     return app

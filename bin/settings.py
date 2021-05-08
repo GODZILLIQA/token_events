@@ -8,6 +8,7 @@ class Settings(BaseSettings):
         env_file = ".env"
         env_file_encoding = "utf-8"
 
+    debug: bool
     project_path: str = os.path.abspath(os.getcwd())
 
     project_name: str
@@ -17,6 +18,8 @@ class Settings(BaseSettings):
 
     api_v1_str: str
     api_secret_key: str
+
+    redis_server: str
 
 
 @lru_cache()

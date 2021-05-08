@@ -13,6 +13,7 @@ redis = ">=3.5.3"
 loguru = ">=0.5.3"
 debugpy = ">=v1.0.0rc2"
 pytest = ">=6.2.3"
+itsdangerous = ">=1.1.0"
 
 [dev-packages]
 black = ">=21.5b0"

@@ -2,9 +2,12 @@ version: '3.8'
 services:
   api-redis:
     image: "redis:alpine"
+    ports:
+      - "6379:6379"
   api:
-    environment:
-      - DATABASE_URL=postgresql://local:local@api-db:5432/test_db
+    environment: 
+      - REDIS_SERVER=localhost
+      - PORT=8080
     build:
       context: '.'
       dockerfile: Dockerfile
@@ -15,4 +18,6 @@ services:
       - "5678:5678"
     depends_on:
       - api-redis
+    env_file:
+      - .env
     restart: always
