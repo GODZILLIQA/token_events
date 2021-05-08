@@ -23,12 +23,12 @@ class TokenEvent(BaseModel):
         validate_all = True
         use_enum_values = False
         validate_assignment = True
-        extra = "allow"
+        extra = "forbid"
         allow_mutation = False
         frozen = True
 
     event_id: int
-    parent_event_id: int
+    parent_event_id: Optional[int]
     start_date: Optional[datetime]
     end_date: Optional[datetime]
     created_at: Optional[datetime]
